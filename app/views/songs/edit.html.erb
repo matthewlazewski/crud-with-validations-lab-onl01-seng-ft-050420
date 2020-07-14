@@ -1,0 +1,21 @@
+<!-- <%= form_tag song_path(@song), method: "patch", name: "edit_song", id: "edit_song" do %>
+    <%= text_field_tag "song[title]", @song.title %>
+    <%= text_field_tag "song[released]", @song.released %>
+    <%= text_field_tag "song[release_year]", @song.release_year %>
+    <%= text_field_tag "song[artist_name]", @song.artist_name %>
+    <%= text_field_tag "song[genre]", @song.genre %>
+
+    <%= submit_tag "Edit Song" %>
+<% end %> -->
+
+<h1>Edit Song</h1>
+
+<%= form_for @song do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+    <%= f.check_box :released %>
+    <%= f.number_field :release_year %>
+    <%= f.text_field :artist_name %>
+    <%= f.text_field :genre %>
+    <%= f.submit "Edit Song" %>
+<% end %>
